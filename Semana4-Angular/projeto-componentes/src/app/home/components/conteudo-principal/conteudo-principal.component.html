@@ -1,0 +1,21 @@
+
+<div>
+    <h3 appBlue>{{ paragrafo.titulo }}</h3>
+    <p *ngIf="exibeParagrafo">{{paragrafo.conteudo}}</p>
+</div>
+
+<button (click)="exibeParagrafoSimNao()">Read More</button>
+
+<hr>
+
+<div *ngFor="let paragrafo of paragrafos">
+    <h3 appBlue>{{ paragrafo.titulo }}</h3>
+    <p *ngIf="paragrafo.disponivel">{{paragrafo.conteudo}}</p>
+    <p [ngClass]="{ 'disponivel': paragrafo.disponivel, 'indisponivel': !paragrafo.disponivel}">{{ paragrafo.disponivel ? '' : 'Indisponível'}}</p>
+</div>
+
+
+
+
+
+
